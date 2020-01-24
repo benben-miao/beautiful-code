@@ -1,0 +1,7 @@
+@import url(https://fonts.googleapis.com/css?family=Economica);
+body {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  cursor: move;
+}

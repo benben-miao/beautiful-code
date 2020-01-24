@@ -1,0 +1,168 @@
+:root {
+	--background:#3C3B3D;
+}
+$time:8s;
+$elements:256;
+$traillength:3rem;
+
+//https://gist.github.com/kamikat/c4d472ce3c61feec6376
+$pi: 3.14159265359;
+$_precision: 10;
+
+@function pow($base, $exp) {
+  $value: $base;
+  @if $exp > 1 {
+    @for $i from 2 through $exp {
+      $value: $value * $base;
+    }
+  }
+  @if $exp < 1{
+    @for $i from 0 through -$exp {
+      $value: $value / $base;
+    }
+  }
+  @return $value;
+}
+
+@function fact($num) {
+  $fact: 1;
+  @if $num > 0{
+    @for $i from 1 through $num {
+      $fact: $fact * $i;
+    }
+  }
+  @return $fact;
+}
+
+@function _to_unitless_rad($angle) {
+  @if unit($angle) == "deg" {
+    $angle: $angle / 180deg * $pi;
+  }
+  @if unit($angle) == "rad" {
+    $angle: $angle / 1rad;
+  }
+  @return $angle;
+}
+
+@function sin($angle){
+  $a: _to_unitless_rad($angle%360);
+  $sin: $a;
+  @for $n from 1 through $_precision {
+    $sin: $sin + (pow(-1, $n) / fact(2 * $n + 1) ) * pow($a, (2 * $n + 1));
+  }
+  @return $sin;
+}
+
+@function cos($angle){
+  $a: _to_unitless_rad($angle%360);
+  $cos: 1;
+  @for $n from 1 through $_precision {
+    $cos: $cos + ( pow(-1,$n) / fact(2*$n) ) * pow($a,2*$n);
+  }
+  @return $cos;
+}
+
+@function tan($angle){
+  @return sin($angle) / cos($angle);
+}
+body {
+	background:var(--background);
+	ul {
+		padding:0;
+		li {
+			list-style:none;
+		}
+	}
+	ul:nth-child(1) {
+		position: absolute;
+		top:20vh;
+		left:50%;
+		width:1rem;
+		height:1rem;
+		border-radius:100%;
+		//background:#FFCE54;
+		transform:translate(-50%, -50%);
+		li {
+			position: absolute;
+			width:0;
+			height:0;
+			border-width:0 0.5rem 1rem 0.5rem;
+			border-style:solid;
+			border-color:transparent;
+			border-bottom-color:#FFCE54;
+			transform-origin:0.5rem 1rem;
+			@for $i from 0 through 4 {
+				&:nth-child(#{$i}) {
+					transform:rotate($i*72deg);
+				}
+			}
+		}
+	}
+	ul:nth-child(2) {
+		li {
+			position: absolute;
+			top:20vh;
+			left:50%;
+			width:0.0625rem;
+			height:60vh;
+			transform-origin:50% 0%;
+			@for $i from 1 through $elements {
+				&:nth-child(#{$i}) {
+					&:before, &:after {
+						animation-delay: (-$i)*(0.5*$time/$elements);
+					}
+					$t:(6*360deg*$i/$elements);
+					transform:rotate((sin($t)+cos($t/3)*.1)*20deg);
+				}
+			}
+			&:before, &:after {
+				content: "";
+				position: absolute;
+				top:0%;
+				animation:fall 4s linear infinite;
+			}
+			&:before {
+				width:0.0625rem;
+				height:$traillength;
+				background: linear-gradient(rgba(46,204,113, 0), rgba(46,204,113, 0.5));
+			}
+			&:after {
+				bottom:0;
+				transform:translate(-50%, $traillength);
+				width:0.1875rem;
+				height:0.1875rem;
+				border-radius:100%;
+				background:rgb(255,206,84);
+			}
+			&:nth-child(4n):after {
+				background:#D8334A;
+			} 
+			&:nth-child(4n+1):after {
+				background:#FFCE54;
+			} 
+			&:nth-child(4n+2):after {
+				background:#2ECC71;
+			} 
+			&:nth-child(4n+3):after {
+				background:#5D9CEC;
+			} 
+		}
+	}
+}
+
+@keyframes fall {
+	0% {
+		opacity:0;
+		top:0%;
+	}
+	5% {
+		opacity:0;
+	}
+	15%, 90% {
+		opacity:1;
+	}
+	100% {
+		opacity:0;
+		top:100%;
+	}
+}

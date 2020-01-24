@@ -1,0 +1,159 @@
+@import 'compass';
+
+$blue: #0063a6;
+$cyan: #2fdbf5;
+$white: #fff;
+$yellow: #f3d891;
+$darkBlue: #4494d3;
+$armyGreen: #3b490b;
+$darkOrange: #fe5302;
+$gray: #eee;
+
+html, body {
+  height: 100%;
+}
+
+.seasonsContainer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  @include background-image(linear-gradient(top, $blue 0%, lighten($blue, 5%) 15%, lighten($blue, 70%) 100%));
+}
+.grass {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 5vmin;
+  max-height: 62px;
+  background: transparent url(https://dodozhang21.github.io/svg/fourSeasons/grassBk.png) repeat-x;
+  background-size: contain;
+  z-index: 1;
+}
+
+.cloud {
+  position: absolute;
+  background: $white;
+  width: 30vw;
+  height: 10vw;
+  top: 15%;
+  left: 10%;
+  border-radius: 5vw;
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    background: $white;
+    border-radius: 50%;
+  }
+  &:before {
+    width: 25%;
+    height: 75%;
+    top: -35%;
+    left: 15%;
+  }
+  &:after {
+    width: 50%;
+    height: 150%;
+    top: -60%;
+    left: 33%;
+  }
+}
+.cloud2 {
+  width: 21vw;
+  height: 7vw;
+  top: 8%;
+  left: 67%;
+}
+
+.season {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100%;
+  display: block;
+  z-index: 20;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center bottom;
+  @include transition(all 1s ease-out, opacity 0.5s ease-out);
+  &:before,&:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  &.active {
+    width: 100%;
+    left: 0;
+    z-index: 100;
+  }
+  &.inactive {
+    opacity: 0;
+  }
+}
+
+.spring {
+  background-image: url(https://dodozhang21.github.io/svg/fourSeasons/springTree.svg);
+  &:after {
+    background: linear-gradient(top, rgba($cyan, .5) 0%, rgba($white, .2) 100%);
+    @include filter(saturate(1));
+  }
+
+}
+
+.summer {
+  left: 25%;
+  background-image:  url(https://dodozhang21.github.io/svg/fourSeasons/summerTree.svg);
+  &:before {
+    background: url(https://dodozhang21.github.io/svg/fourSeasons/bird.svg) no-repeat center center;
+    background-size: 10% 10%;
+  }
+  &:after {
+    background-image: linear-gradient(top, rgba($darkBlue, .7) 0%, rgba($yellow, .5) 60%, rgba($yellow, 0.3) 70%, rgba($yellow, 0.3) 80%, rgba(darken($yellow, 50%), .3) 100%);
+  @include filter(brightness(1));
+  }
+}
+
+.fall {
+  left: 50%;
+  background-image: url(https://dodozhang21.github.io/svg/fourSeasons/fallTree.svg);
+  &:before {
+    background: url(https://dodozhang21.github.io/svg/fourSeasons/leaves.svg) no-repeat center center;
+    background-size: contain;
+  }
+  &:after {
+    background: rgba($darkOrange, .4);
+    @include filter(saturate(1));
+  }
+
+}
+
+.winter {
+  left: 75%;
+  background-image:  url(https://dodozhang21.github.io/svg/fourSeasons/winterTree.svg);
+  background-position: center 95%;
+  &:before {
+    background-image: url(https://dodozhang21.github.io/svg/fourSeasons/snow.svg), linear-gradient(top, rgba($white, .05) 0%, $white 20%, $white 100%);
+    @include filter(grayscale(1));
+    background-repeat: no-repeat;
+    background-size: 50% 50%, 100% 6%;
+    background-position: center 140%, center bottom;
+    @include transition(all 0.3s ease-out);
+  }
+  &:after {
+    background-image: linear-gradient(top, rgba($gray, .7) 0%, rgba($white, .1) 100%);
+    @include filter(grayscale(1));
+  }
+  &.active {
+    &:before {
+      background-size:50% 25%,  100% 6%;
+      background-position: center 112%, center bottom;
+    }
+  }
+}

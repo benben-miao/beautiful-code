@@ -1,0 +1,16 @@
+body{
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background: rgb(32,49,124);
+  background: -moz-radial-gradient(center, ellipse cover, rgba(32,49,124,1) 0%, rgba(64,165,232,1) 100%);
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(32,49,124,1) 0%,rgba(64,165,232,1) 100%);
+  background: radial-gradient(ellipse at center, rgba(32,49,124,1) 0%,rgba(64,165,232,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#20317c', endColorstr='#40a5e8',GradientType=1 );
+  background-attachment: fixed;
+}
+canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+}

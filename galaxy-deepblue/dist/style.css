@@ -1,0 +1,58 @@
+.star {
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: -6px -8px 10px #F8A50E, -4px 7px 10px #BFF80E, 6px -4px 10px #0ED6F8;
+}
+
+.galaxy {
+  position: fixed;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-animation: rotate 300s linear infinite;
+  animation: rotate 300s linear infinite;
+  background-image: radial-gradient(circle, peachpuff, darkblue, transparent 70%);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  border-radius: 50%;
+  overflow: hidden;
+  height: 800px;
+  width: 800px;
+  margin: auto;
+}
+
+.universe {
+  position: fixed;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: perspective(50em) rotateX(-120deg) rotateY(20deg);
+          transform: perspective(50em) rotateX(-120deg) rotateY(20deg);
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(360deg);
+  }
+}
+@keyframes rotate {
+  from {
+    -webkit-transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(360deg);
+    transform: rotateZ(360deg);
+  }
+}
+body {
+  background-color: black;
+}

@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;;
+}
+
+html {
+  font-family: Helvetica Neue, Helvetica, sans-serif;
+  position: relative;
+}
+/**************************************************************************/
+/***********************************MY CUSTOM RULES************************/
+/**************************************************************************/
+
+body {
+  background: slategray;
+  margin: 0;
+  padding: 0;
+  color: #ffd000;
+
+}
+  :root {
+    /* --base: 20px; */
+    --test:#332e26;
+   
+    /*production build*/
+    /* --base: 30px; */
+    --lightMist: #a8a8a8;
+    --darkMist: #4d4d4d;
+    --bgGradRight: #fff;
+    /*flowers*/
+    --clayred:#4c1e10;
+    --ruby:#7e2125;
+    --flagred:#f81415;
+  }
+
+.app {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+div.container {
+  position: relative;
+}
+
+
+.app > h1 {
+  color: white;
+}
+
+.scene-container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+svg {
+  position: absolute;
+}
+#scene-bg-svg {
+  height: 100%;
+  width: 100%;
+  /* border: 2px solid brown; */
+}
+
+#pond-svg {
+  position: absolute;
+    height: 100%;
+    width: 101%;
+    bottom: 0;
+  left: 0;
+}
+
+#tree-svg { /*targeted correctly*/
+  position: absolute; 
+  height: 100vh;
+  width: 100vw; 
+  top: 0;
+  left: 0;
+}
+#duck-svg {
+  bottom: 1vh;
+  right: 1vw; 
+  height: 25vh;
+  width: 35vw;
+}
+
+
+#bird-svg {
+  width: 40px;
+  height: 50px;
+  left: 0;
+  top: 46.2vh;
+}
+#bird-svg:hover {
+  cursor: pointer;
+}
+#bird-wings {
+  opacity: 0;
+}
+g #flutter {
+  opacity: 0;
+}
+
+#swell-stop1 {
+  stop-opacity: 0;
+}
+#swell-stop2 {
+  stop-opacity: 0;
+}
+#swell-stop3 {
+  stop-opacity: 0;
+}
+#swell-stop4 {
+  stop-opacity: 0;
+}
+#msg {
+  z-index: 30;
+  color: black;
+}

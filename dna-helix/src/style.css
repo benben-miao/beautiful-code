@@ -1,0 +1,9 @@
+body {
+  background: #fff;
+  margin: 0;
+  overflow: hidden;
+}
+#target {
+	background: #fff;
+	display: block;
+}

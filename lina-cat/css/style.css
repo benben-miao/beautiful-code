@@ -1,0 +1,31 @@
+/*@import url(https://fonts.googleapis.com/css?family=Open+Sans:800);*/
+
+#world{
+	position: absolute;
+	width:99%;
+	height: 99%;
+    background-color: #6ecccc;
+    box-shadow: 0px 0px 10px #f10654;
+    margin-left: 0.4%;
+  overflow:hidden;
+}
+
+#credits{
+  position:absolute;
+  width:100%;
+  margin: auto;
+  bottom:0;
+  margin-bottom:20px;
+  font-family:'Open Sans', sans-serif;
+  color:#fff;
+  font-size:0.7em;
+  text-transform: uppercase;
+  text-align : center;
+}
+#credits a {
+  color:#fff;
+}
+
+#credits a:hover {
+  color:#630d15;
+}

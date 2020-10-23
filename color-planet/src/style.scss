@@ -1,0 +1,81 @@
+$width: 45vmin;
+$height: 45vmin;
+
+.wrapper {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 60em;
+  
+  flex-direction: column;
+  background-color: #131417;
+  overflow: hidden;
+  
+  .title {
+    font-size: 3rem;
+    margin-bottom: 6rem;
+    color: #DDD;
+  }
+  
+  .sphere {
+    width: $width;
+    height: $height;
+    position: relative;
+    animation: rotation 60s infinite linear;
+    transform-style: preserve-3d;
+    
+    .section {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      border-radius: 50%;
+      
+      border: 2px solid #333;
+      transform-style: preserve-3d;
+    }
+    
+    @function randomNum($min, $max) {
+      $rand: random();
+      $randomNum: $min + floor($rand * (($max - $min) + 1));
+
+      @return $randomNum;
+    }
+    
+    @for $i from 1 through 20 {
+      .section:nth-child(#{$i}) {
+        $color: adjust-hue(blue, $i * 20%);
+        border-color: $color;
+        box-shadow: inset 0 0 5vmin 0px $color, 0 0 90px -30px $color;
+        transform: rotateY(#{$i * (180 / 20)}deg);
+        animation: fullRot#{$i} 10s linear infinite;
+        
+        @keyframes fullRot#{$i} {
+          from { transform: rotateY(#{$i * (180 / 15)}deg); }
+          to { transform: rotateY(#{$i * (180 / 15) + 360}deg); }
+        }
+        
+        @if ($i > 15) {
+            animation: none;
+            transform: scale((1 * ($i / 10)));
+            opacity: 0;
+            box-shadow: inset 0 0 5vmin 0px $color, 0 0 90px -30px $color;
+          
+          @if ($i > 16) {
+            opacity: 1;
+            transform: scale((1 * ($i / 10)));
+            box-shadow: inset 0 0 5vmin 0px $color, 0 0 90px -30px $color;
+            
+          }
+        }
+      }
+    }
+    
+    @keyframes rotation {
+      0% { transform: rotateY(0deg) rotateX(90deg)}
+      50% { transform: rotateY((360deg * 3)) rotateX((120deg * 1))}
+      100% { transform: rotateY((360deg * 6)) rotateX(90deg)}
+    }
+  }
+}

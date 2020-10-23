@@ -1,0 +1,184 @@
+:root {
+  --width: 40vmin;
+  --height: 40vmin;
+}
+
+.wrapper {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 40em;
+  flex-direction: column;
+  background-color: #222;
+  overflow: hidden;
+}
+.wrapper .title {
+  font-size: 3rem;
+  margin-bottom: 6rem;
+  color: #DDD;
+}
+.wrapper .sphere {
+  width: 30vmin;
+  height: 30vmin;
+  position: relative;
+  animation: rotation 10s infinite linear;
+  transform-style: preserve-3d;
+}
+.wrapper .sphere .section {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid #333;
+  transform-style: preserve-3d;
+}
+.wrapper .sphere .section:nth-child(1) {
+  width: 2.4vmin;
+  height: 3vmin;
+  border-color: #5500ff;
+  box-shadow: inset 0 0 60px 0px #5500ff, 0 0 60px -30px #5500ff;
+  transform: rotateY(18deg);
+}
+.wrapper .sphere .section:nth-child(2) {
+  width: 4.8vmin;
+  height: 6vmin;
+  border-color: #aa00ff;
+  box-shadow: inset 0 0 60px 0px #aa00ff, 0 0 60px -30px #aa00ff;
+  transform: rotateY(36deg);
+}
+.wrapper .sphere .section:nth-child(3) {
+  width: 7.2vmin;
+  height: 9vmin;
+  border-color: magenta;
+  box-shadow: inset 0 0 60px 0px magenta, 0 0 60px -30px magenta;
+  transform: rotateY(54deg);
+}
+.wrapper .sphere .section:nth-child(4) {
+  width: 9.6vmin;
+  height: 12vmin;
+  border-color: #ff00aa;
+  box-shadow: inset 0 0 60px 0px #ff00aa, 0 0 60px -30px #ff00aa;
+  transform: rotateY(72deg);
+}
+.wrapper .sphere .section:nth-child(5) {
+  width: 12vmin;
+  height: 15vmin;
+  border-color: #ff0055;
+  box-shadow: inset 0 0 60px 0px #ff0055, 0 0 60px -30px #ff0055;
+  transform: rotateY(90deg);
+}
+.wrapper .sphere .section:nth-child(6) {
+  width: 14.4vmin;
+  height: 18vmin;
+  border-color: red;
+  box-shadow: inset 0 0 60px 0px red, 0 0 60px -30px red;
+  transform: rotateY(108deg);
+}
+.wrapper .sphere .section:nth-child(7) {
+  width: 16.8vmin;
+  height: 21vmin;
+  border-color: #ff5500;
+  box-shadow: inset 0 0 60px 0px #ff5500, 0 0 60px -30px #ff5500;
+  transform: rotateY(126deg);
+}
+.wrapper .sphere .section:nth-child(8) {
+  width: 19.2vmin;
+  height: 24vmin;
+  border-color: #ffaa00;
+  box-shadow: inset 0 0 60px 0px #ffaa00, 0 0 60px -30px #ffaa00;
+  transform: rotateY(144deg);
+}
+.wrapper .sphere .section:nth-child(9) {
+  width: 21.6vmin;
+  height: 27vmin;
+  border-color: yellow;
+  box-shadow: inset 0 0 60px 0px yellow, 0 0 60px -30px yellow;
+  transform: rotateY(162deg);
+}
+.wrapper .sphere .section:nth-child(10) {
+  width: 24vmin;
+  height: 30vmin;
+  border-color: #aaff00;
+  box-shadow: inset 0 0 60px 0px #aaff00, 0 0 60px -30px #aaff00;
+  transform: rotateY(180deg);
+}
+.wrapper .sphere .section:nth-child(11) {
+  width: 26.4vmin;
+  height: 33vmin;
+  border-color: #55ff00;
+  box-shadow: inset 0 0 60px 0px #55ff00, 0 0 60px -30px #55ff00;
+  transform: rotateY(198deg);
+}
+.wrapper .sphere .section:nth-child(12) {
+  width: 28.8vmin;
+  height: 36vmin;
+  border-color: lime;
+  box-shadow: inset 0 0 60px 0px lime, 0 0 60px -30px lime;
+  transform: rotateY(216deg);
+}
+.wrapper .sphere .section:nth-child(13) {
+  width: 31.2vmin;
+  height: 39vmin;
+  border-color: #00ff55;
+  box-shadow: inset 0 0 60px 0px #00ff55, 0 0 60px -30px #00ff55;
+  transform: rotateY(234deg);
+}
+.wrapper .sphere .section:nth-child(14) {
+  width: 33.6vmin;
+  height: 42vmin;
+  border-color: #00ffaa;
+  box-shadow: inset 0 0 60px 0px #00ffaa, 0 0 60px -30px #00ffaa;
+  transform: rotateY(252deg);
+}
+.wrapper .sphere .section:nth-child(15) {
+  width: 36vmin;
+  height: 45vmin;
+  border-color: cyan;
+  box-shadow: inset 0 0 60px 0px cyan, 0 0 60px -30px cyan;
+  transform: rotateY(270deg);
+}
+.wrapper .sphere .section:nth-child(16) {
+  width: 38.4vmin;
+  height: 48vmin;
+  border-color: #00aaff;
+  box-shadow: inset 0 0 60px 0px #00aaff, 0 0 60px -30px #00aaff;
+  transform: rotateY(288deg);
+}
+.wrapper .sphere .section:nth-child(17) {
+  width: 40.8vmin;
+  height: 51vmin;
+  border-color: #0055ff;
+  box-shadow: inset 0 0 60px 0px #0055ff, 0 0 60px -30px #0055ff;
+  transform: rotateY(306deg);
+}
+.wrapper .sphere .section:nth-child(18) {
+  width: 43.2vmin;
+  height: 54vmin;
+  border-color: blue;
+  box-shadow: inset 0 0 60px 0px blue, 0 0 60px -30px blue;
+  transform: rotateY(324deg);
+}
+.wrapper .sphere .section:nth-child(19) {
+  width: 45.6vmin;
+  height: 57vmin;
+  border-color: #5500ff;
+  box-shadow: inset 0 0 60px 0px #5500ff, 0 0 60px -30px #5500ff;
+  transform: rotateY(342deg);
+}
+.wrapper .sphere .section:nth-child(20) {
+  width: 48vmin;
+  height: 60vmin;
+  border-color: #aa00ff;
+  box-shadow: inset 0 0 60px 0px #aa00ff, 0 0 60px -30px #aa00ff;
+  transform: rotateY(360deg);
+}
+@keyframes rotation {
+  from {
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+  to {
+    transform: rotateY(360deg) rotateX(360deg);
+  }
+}

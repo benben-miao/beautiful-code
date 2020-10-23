@@ -1,0 +1,83 @@
+:root {
+  --width: 40vmin;
+  --height: 40vmin;
+}
+
+$width: 50vmin;
+$height: 50vmin;
+
+.wrapper {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 40em;
+  
+  flex-direction: column;
+  background-color: #222;
+  overflow: hidden;
+  
+  .title {
+    font-size: 3rem;
+    margin-bottom: 6rem;
+    color: #DDD;
+  }
+  
+  .sphere {
+    width: $width;
+    height: $height;
+    position: relative;
+    animation: rotation 60s infinite linear;
+    transform-style: preserve-3d;
+    
+    .section {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      // top: 50%;
+      // left: 50%;
+      border-radius: 50%;
+      
+      border: 2px solid #333;
+      transform-style: preserve-3d;
+    }
+    
+    @function randomNum($min, $max) {
+      $rand: random();
+      $randomNum: $min + floor($rand * (($max - $min) + 1));
+
+      @return $randomNum;
+    }
+    
+    @for $i from 1 through 20 {
+      .section:nth-child(#{$i}) {
+        // $color: adjust-hue(blue, $i * 20%);
+        $color: adjust-hue(cyan, $i * 3%);
+        // $color: cyan;
+        
+        // width: $width * ($i * 0.05);
+        // height: $height * ($i * 0.05);
+        
+        // background-color: rgba(lighten(blue, $i * 4%), 0.3);
+        border-color: $color;
+        box-shadow: inset 0 0 100px 0px $color, 0 0 90px -30px $color;
+        transform: rotateY(#{$i * (360 / 20)}deg);
+        // transform: rotateY(#{randomNum(0, 360)}deg) rotateX(#{randomNum(0, 360)}deg);
+        
+        @if ($i > 10) {
+          transform: rotateX(#{$i * (360 / 20)}deg);
+          // transform: rotateX(#{$i * (360 / 20)}deg) scale(0.5);
+        
+          // transform: rotateY(#{randomNum(0, 360)}deg) rotateX(#{randomNum(0, 360)}deg) scale(0.6);
+          // border-color: red;
+        }
+      }
+    }
+    
+    @keyframes rotation {
+      from { transform: rotateY(0deg) rotateX(0deg)}
+      to { transform: rotateY((360deg * 8)) rotateX((360deg * 3))}
+    }
+  }
+}

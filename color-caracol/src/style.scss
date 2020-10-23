@@ -1,0 +1,69 @@
+:root {
+  --width: 40vmin;
+  --height: 40vmin;
+}
+
+$width: 30vmin;
+$height: 30vmin;
+
+.wrapper {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 40em;
+  flex-direction: column;
+  background-color: #222;
+  overflow: hidden;
+  
+  .title {
+    font-size: 3rem;
+    margin-bottom: 6rem;
+    color: #DDD;
+  }
+  
+  .sphere {
+    width: $width;
+    height: $height;
+    position: relative;
+    animation: rotation 10s infinite linear;
+    transform-style: preserve-3d;
+    
+    .section {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      // top: 50%;
+      // left: 50%;
+      border-radius: 50%;
+      
+      border: 2px solid #333;
+      transform-style: preserve-3d;
+    }
+    
+    @for $i from 1 through 20 {
+      .section:nth-child(#{$i}) {
+        $color: adjust-hue(blue, $i * 20%);
+        
+        width: $width * ($i * 0.08);
+        height: $height * ($i * 0.1);
+        
+        // background-color: rgba(lighten(blue, $i * 4%), 0.3);
+        border-color: $color;
+        box-shadow: inset 0 0 60px 0px $color, 0 0 60px -30px $color;
+        transform: rotateY(#{$i * (360 / 20)}deg);
+
+        // @if ($i > 10) {
+        //   transform: rotateX(#{$i * (360 / 20)}deg);
+        //   // border-color: red;
+        // }
+      }
+    }
+    
+    @keyframes rotation {
+      from { transform: rotateY(0deg) rotateX(0deg)}
+      to { transform: rotateY(360deg) rotateX(360deg)}
+    }
+  }
+}

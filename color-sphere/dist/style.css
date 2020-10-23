@@ -1,0 +1,154 @@
+:root {
+  --width: 40vmin;
+  --height: 40vmin;
+}
+
+.wrapper {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 40em;
+  flex-direction: column;
+  background-color: #222;
+  overflow: hidden;
+}
+.wrapper .title {
+  font-size: 3rem;
+  margin-bottom: 6rem;
+  color: #DDD;
+}
+.wrapper .sphere {
+  width: 50vmin;
+  height: 50vmin;
+  position: relative;
+  animation: rotation 60s infinite linear;
+  transform-style: preserve-3d;
+}
+.wrapper .sphere .section {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid #333;
+  transform-style: preserve-3d;
+}
+.wrapper .sphere .section:nth-child(1) {
+  border-color: #00f2ff;
+  box-shadow: inset 0 0 100px 0px #00f2ff, 0 0 90px -30px #00f2ff;
+  transform: rotateY(18deg);
+}
+.wrapper .sphere .section:nth-child(2) {
+  border-color: #00e6ff;
+  box-shadow: inset 0 0 100px 0px #00e6ff, 0 0 90px -30px #00e6ff;
+  transform: rotateY(36deg);
+}
+.wrapper .sphere .section:nth-child(3) {
+  border-color: #00d9ff;
+  box-shadow: inset 0 0 100px 0px #00d9ff, 0 0 90px -30px #00d9ff;
+  transform: rotateY(54deg);
+}
+.wrapper .sphere .section:nth-child(4) {
+  border-color: #00ccff;
+  box-shadow: inset 0 0 100px 0px #00ccff, 0 0 90px -30px #00ccff;
+  transform: rotateY(72deg);
+}
+.wrapper .sphere .section:nth-child(5) {
+  border-color: deepskyblue;
+  box-shadow: inset 0 0 100px 0px deepskyblue, 0 0 90px -30px deepskyblue;
+  transform: rotateY(90deg);
+}
+.wrapper .sphere .section:nth-child(6) {
+  border-color: #00b3ff;
+  box-shadow: inset 0 0 100px 0px #00b3ff, 0 0 90px -30px #00b3ff;
+  transform: rotateY(108deg);
+}
+.wrapper .sphere .section:nth-child(7) {
+  border-color: #00a6ff;
+  box-shadow: inset 0 0 100px 0px #00a6ff, 0 0 90px -30px #00a6ff;
+  transform: rotateY(126deg);
+}
+.wrapper .sphere .section:nth-child(8) {
+  border-color: #0099ff;
+  box-shadow: inset 0 0 100px 0px #0099ff, 0 0 90px -30px #0099ff;
+  transform: rotateY(144deg);
+}
+.wrapper .sphere .section:nth-child(9) {
+  border-color: #008cff;
+  box-shadow: inset 0 0 100px 0px #008cff, 0 0 90px -30px #008cff;
+  transform: rotateY(162deg);
+}
+.wrapper .sphere .section:nth-child(10) {
+  border-color: #0080ff;
+  box-shadow: inset 0 0 100px 0px #0080ff, 0 0 90px -30px #0080ff;
+  transform: rotateY(180deg);
+}
+.wrapper .sphere .section:nth-child(11) {
+  border-color: #0073ff;
+  box-shadow: inset 0 0 100px 0px #0073ff, 0 0 90px -30px #0073ff;
+  transform: rotateY(198deg);
+  transform: rotateX(198deg);
+}
+.wrapper .sphere .section:nth-child(12) {
+  border-color: #0066ff;
+  box-shadow: inset 0 0 100px 0px #0066ff, 0 0 90px -30px #0066ff;
+  transform: rotateY(216deg);
+  transform: rotateX(216deg);
+}
+.wrapper .sphere .section:nth-child(13) {
+  border-color: #0059ff;
+  box-shadow: inset 0 0 100px 0px #0059ff, 0 0 90px -30px #0059ff;
+  transform: rotateY(234deg);
+  transform: rotateX(234deg);
+}
+.wrapper .sphere .section:nth-child(14) {
+  border-color: #004dff;
+  box-shadow: inset 0 0 100px 0px #004dff, 0 0 90px -30px #004dff;
+  transform: rotateY(252deg);
+  transform: rotateX(252deg);
+}
+.wrapper .sphere .section:nth-child(15) {
+  border-color: #0040ff;
+  box-shadow: inset 0 0 100px 0px #0040ff, 0 0 90px -30px #0040ff;
+  transform: rotateY(270deg);
+  transform: rotateX(270deg);
+}
+.wrapper .sphere .section:nth-child(16) {
+  border-color: #0033ff;
+  box-shadow: inset 0 0 100px 0px #0033ff, 0 0 90px -30px #0033ff;
+  transform: rotateY(288deg);
+  transform: rotateX(288deg);
+}
+.wrapper .sphere .section:nth-child(17) {
+  border-color: #0026ff;
+  box-shadow: inset 0 0 100px 0px #0026ff, 0 0 90px -30px #0026ff;
+  transform: rotateY(306deg);
+  transform: rotateX(306deg);
+}
+.wrapper .sphere .section:nth-child(18) {
+  border-color: #001aff;
+  box-shadow: inset 0 0 100px 0px #001aff, 0 0 90px -30px #001aff;
+  transform: rotateY(324deg);
+  transform: rotateX(324deg);
+}
+.wrapper .sphere .section:nth-child(19) {
+  border-color: #000dff;
+  box-shadow: inset 0 0 100px 0px #000dff, 0 0 90px -30px #000dff;
+  transform: rotateY(342deg);
+  transform: rotateX(342deg);
+}
+.wrapper .sphere .section:nth-child(20) {
+  border-color: blue;
+  box-shadow: inset 0 0 100px 0px blue, 0 0 90px -30px blue;
+  transform: rotateY(360deg);
+  transform: rotateX(360deg);
+}
+@keyframes rotation {
+  from {
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+  to {
+    transform: rotateY(2880deg) rotateX(1080deg);
+  }
+}

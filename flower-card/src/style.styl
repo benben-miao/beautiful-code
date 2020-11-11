@@ -1,0 +1,44 @@
+// change values to get different effects
+hue = 20 
+spin-multiplier = 36
+round-mode = true 
+roundness-multiplier = 0.2
+breath-amount = 0.6 
+size = 4vmin
+delay = 80ms
+
+// --------------------
+
+.x
+  grid-row      1/-1
+  grid-column   1/-1
+  border-radius 12px 
+  animation     ease 2s alternate infinite
+  
+  for i in 1..20
+    name = "x-%s" % i
+    &:nth-of-type({i})
+      box-shadow      0 0 (i*0.5)vmin rgba(0,0,0,0.1)
+      if round-mode
+        border-radius (1 + i*roundness-multiplier)vmin
+      width           size*i
+      height          size*i
+      background      hsl(hue - 2*i, 100 - i*2, 100 - i*5)
+      animation-name  name 
+      animation-delay i*delay      
+      transform       perspective((500 - 10*i)px) rotate((spin-multiplier*i)deg)
+      z-index         100 - i
+      
+    @keyframes name
+      to 
+        transform rotate(( spin-multiplier*i )deg) scale(breath-amount)
+      
+  
+
+body
+  min-height      100vh
+  overflow        hidden
+  display         grid
+  place-items     center
+  background      black  
+  perspective      500px

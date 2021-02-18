@@ -2,13 +2,13 @@
 
 html {
  font-size: 16px;
- background-color: #000;
+ background-color: #eee;
 }
 html, a {
  font-family: 'Archivo Narrow', sans-serif;
  font-weight: normal;
  font-style: normal;
- color: #093852;
+ color: #333;
 }
 #tableau .periode {
   display: flex;
@@ -18,7 +18,7 @@ html, a {
 }
 #entete-period {
   position: absolute;
-  color: #fff;
+  color: #333;
   width: 10%;
 }
 #entete-period .fleche {
@@ -26,7 +26,7 @@ html, a {
 }
 #entete-group {
   text-align: center;
-  color: #fff;
+  color: #333;
 }
 #entete-group p {
   display: inline-block;
@@ -45,13 +45,14 @@ html, a {
   padding: 0.1%;
   position:relative;
   cursor: default;
+  border-radius: 12%;
 }
 .element {
   cursor: pointer;
 }
 .index {
   visibility: visible;
-  color: #fff;
+  color: #333;
 }
 .cel[data-col='0'] .index-value {
   position: relative;
@@ -104,7 +105,7 @@ html, a {
   text-align: right;
   overflow: visible;
   direction: rtl;
-  color: #fff;
+  color: #333;
 }
 .lan-act-fleche {
   font-size: 2em;
@@ -131,7 +132,7 @@ html, a {
 }
 #periode-9 .cel[data-col='2'].unhover-arrow .masse, 
 #periode-10 .cel[data-col='2'].unhover-arrow .masse {
-  color:#fff;
+  color:#333;
   filter: saturate(1);
   transition: color 1.5s ease .2s, filter 1.5s ease .2s;
 }
@@ -144,7 +145,7 @@ html, a {
 #legende {
   text-align: center;
   margin-top: 17px;
-  color: #fff;
+  color: #333;
 }
 #legende div {
   display: inline-block;
@@ -172,7 +173,7 @@ html, a {
   transition: color 1.5s ease .2s, filter 1.5s ease .2s;
 }
 .legende-nom-out {
-  color: #fff;
+  color: #333;
   filter: saturate(1);
 }
 .legende-fond {
